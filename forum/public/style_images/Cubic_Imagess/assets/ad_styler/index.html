@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>StyleBar</title>
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script> window.jQuery || document.write( '<script src="js/libs/jquery-1.6.4.min.js"><\/script>' ); </script>
+    <!-- End jQuery -->
+
+	<!-- Start styleBar head -->
+    <script src="styleBar.settings.js"></script>
+    <link rel="stylesheet" id="sbcss" href="css/css.php" />
+    <!-- NOTE: compress and concatenate these four -->
+    <script src="js/plugins/localStorage.js"></script>
+    <script src="js/plugins/jquery.miniColors.js"></script>
+    <script src="js/plugins/jquery.styleBar.js"></script>
+    <script>
+        if ( Storage.get( 'href' ) )
+            document.getElementById( 'sbcss' )
+                .setAttribute( 'href', Storage.get( 'href' ) );
+
+        ( function( h,c ) {
+            h[c] = h[c].replace( /\bno-js\b/, '' );
+        } )( document.documentElement, 'className' );
+    </script>
+    <link rel="stylesheet" href="css/styleBar.css" />
+	<!-- End styleBar head -->
+</head>
+<body>
+
+	<!-- Start styleBar -->
+    <form id="styleBar"></form>
+	<!-- End styleBar -->
+
+	<!-- Demo Stuff -->
+	<script src="demo.js"></script>
+	<!-- End Demo Stuff -->
+
+	<!-- Start styleBar JS -->
+    <script>
+        (function( $ ) {
+            $( '#styleBar' ).styleBar( { overlay: true } );
+        })( jQuery );
+    </script>
+	<!-- End styleBar JS -->
+</body>
+</html>
